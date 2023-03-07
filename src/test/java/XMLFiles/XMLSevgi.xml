@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test name = "to be filled by tester">
         <classes>
-            <class name="toBeSelectedByTester"></class>
+            <class name="UserStories.UserStory_Sevgi"></class>
         </classes>
     </test>
 </suite>
