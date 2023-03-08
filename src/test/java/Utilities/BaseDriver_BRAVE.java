@@ -12,9 +12,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,8 +27,8 @@ public class BaseDriver_BRAVE {
     public WebDriverWait wait;
 
 
-    // @BeforeClass()
-    // @Parameters("browser")
+     @BeforeClass()
+     @Parameters("browser")
     public void startingSettings(String browser) {
 
         System.out.println("The start settings has been started");
@@ -49,6 +51,18 @@ public class BaseDriver_BRAVE {
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
-
-
+    @AfterClass(alwaysRun = true)
+    public void finishSettings() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.quit();
+        try {
+            Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
