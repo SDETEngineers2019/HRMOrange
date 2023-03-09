@@ -15,7 +15,7 @@ public class UserStory_Burak extends Tools_Burak {
 
     @Test
     public void test() throws InterruptedException, AWTException {
-        startingSettings("firefox");
+       // startingSettings("firefox"); dont use it when you use XML
         login();
     }
 
@@ -48,7 +48,7 @@ public class UserStory_Burak extends Tools_Burak {
         r2d2_TAB_AND_ENTER_Tools(0,1);
         stringSelection_Tools("E:\\IdeaProjects\\HRMOrange\\src\\test\\java\\UserStories\\UserStory_Burak.java"); //TODO   CHANGE THIS TO YOUR OWN PATH
 
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         visibilityOfElementLocated_Tools(By.cssSelector("[class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']"));
         WebElement errorText = driver.findElement(By.cssSelector("[class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']"));
         verifyElementContainsText_Tools(errorText,"File type");

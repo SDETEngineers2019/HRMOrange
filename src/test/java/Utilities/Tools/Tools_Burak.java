@@ -72,6 +72,7 @@ public class Tools_Burak extends BaseDriver_BRAVE {
             r2d2.keyPress(KeyEvent.VK_ENTER);
             r2d2.keyRelease(KeyEvent.VK_ENTER);
         }
+        r2d2.setAutoDelay(2000);
     }
     public void stringSelection_Tools(String path){
         StringSelection selection = new StringSelection(path);
