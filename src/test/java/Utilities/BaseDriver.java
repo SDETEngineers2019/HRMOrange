@@ -1,6 +1,8 @@
 package Utilities;
 
 import java.time.Duration;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,6 +18,7 @@ public class BaseDriver {
     @BeforeClass(alwaysRun = true)
     @Parameters
     public void startingSettings() {
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 
