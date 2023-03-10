@@ -18,7 +18,6 @@ public class BaseDriver {
     public void startingSettings() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 
     }

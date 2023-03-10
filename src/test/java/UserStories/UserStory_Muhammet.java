@@ -4,6 +4,7 @@ import Utilities.BaseDriver;
 import Utilities.Tools.Tools_Muhammet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -30,8 +31,8 @@ public class UserStory_Muhammet extends Tools_Muhammet {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(1000));
 
 
-       driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-       wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username")));
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username")));
 
         WebElement username = driver.findElement(By.name("username"));
         username.sendKeys("Admin");
@@ -42,13 +43,14 @@ public class UserStory_Muhammet extends Tools_Muhammet {
         WebElement loginButton = driver.findElement(By.xpath("//button[@type='submit']"));
         loginButton.click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()='Tom Collings']")));
-        WebElement userDropdownName = driver.findElement(By.xpath("//p[text()='Tom Collings']"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Admin']")));
+        WebElement userDropdownName = driver.findElement(By.xpath("//span[text()='Admin']"));
 
         Assert.assertTrue(userDropdownName.isDisplayed());
-        Assert.assertEquals(userDropdownName.getText(), "Tom Collings");
+        Assert.assertEquals(userDropdownName.getText(), "Admin");
 
 
     }
+
 
 }
