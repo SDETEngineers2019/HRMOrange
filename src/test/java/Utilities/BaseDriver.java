@@ -26,6 +26,7 @@ public class BaseDriver {
 
     }
 
+
     @AfterClass(alwaysRun = true)
     public void finishSettings(){
         try {
