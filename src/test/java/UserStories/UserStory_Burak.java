@@ -21,6 +21,7 @@ public class UserStory_Burak extends Tools_Burak {
 
     public void login() throws InterruptedException, AWTException {
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+
         // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".oxd-form-row:nth-of-type(1)>.oxd-input-group>.oxd-input-group__label-wrapper+div>input")));
         visibilityOfElementLocated_Tools(By.cssSelector(".oxd-form-row:nth-of-type(1)>.oxd-input-group>.oxd-input-group__label-wrapper+div>input"));

@@ -18,11 +18,11 @@ import static Utilities.BaseDriver.driver;
 import static Utilities.Tools.Tools_Berk.wait;
 
 public class Tools_Burak extends BaseDriver_BRAVE {
-    JavascriptExecutor js;
+    JavascriptExecutor js = (JavascriptExecutor) driver;;
     Robot r2d2;
 
     public void scrollToElement_Tools(WebElement element) {
-        js = (JavascriptExecutor) driver;
+       // js = (JavascriptExecutor) driver;
 
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
