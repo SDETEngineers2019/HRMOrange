@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test name = "PP checking">
-        <parameter name="browser" value="fireaafox"></parameter>
+        <parameter name="browser" value="firefox"></parameter>
         <classes>
             <class name="UserStories.UserStory_Burak"></class>
         </classes>
