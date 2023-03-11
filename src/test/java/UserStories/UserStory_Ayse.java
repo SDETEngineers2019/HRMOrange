@@ -66,7 +66,7 @@ public class UserStory_Ayse extends Tools_Ayse {
 
         WebElement saveButton = driver.findElement(By.xpath("//button[@type='submit']"));
         saveButton.click();
-
+driver.quit();
 
     }
 }
