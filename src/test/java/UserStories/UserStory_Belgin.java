@@ -52,7 +52,7 @@ public class UserStory_Belgin extends Tools_Belgin {
 
         setWait(2);
 
-        StringSelection stringSelection = new StringSelection("C:\\Users\\Lenovo user\\Desktop\\picture.jpg");
+        StringSelection stringSelection = new StringSelection("https://github.com/SDETEngineers2019/HRMOrange/blob/master/src/test/java/UserStories/picture.jpg?raw=true");
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, stringSelection);
 
