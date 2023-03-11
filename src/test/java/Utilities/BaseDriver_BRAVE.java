@@ -44,6 +44,7 @@ public class BaseDriver_BRAVE {
         } else {
             WebDriverManager.chromedriver().setup();
             ChromeOptions opt = new ChromeOptions();
+            opt.addArguments("--remote-allow-origins=*");
             opt.setBinary("C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe");
             driver = new ChromeDriver(opt);
         }
