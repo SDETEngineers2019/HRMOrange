@@ -60,13 +60,13 @@ public class UserStory_Ayse extends Tools_Ayse {
         pic.click();
         Thread.sleep(2000);
 
-        WebElement chooseFile= driver.findElement(By.cssSelector("input[type='file']"));
+        WebElement chooseFile = driver.findElement(By.cssSelector("input[type='file']"));
         chooseFile.sendKeys("C:\\Users\\ayse\\IdeaProjects\\JavaProjects\\HRMOrange2\\src\\test\\java\\UserStories\\dogyeni.jpg");
         Thread.sleep(2000);
 
         WebElement saveButton = driver.findElement(By.xpath("//button[@type='submit']"));
         saveButton.click();
-driver.quit();
+        driver.quit();
 
     }
 }
