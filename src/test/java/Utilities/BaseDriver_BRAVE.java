@@ -36,8 +36,11 @@ public class BaseDriver_BRAVE {
         logger.setLevel(Level.SEVERE);
 
         if (browser.equalsIgnoreCase("Chrome")) {
+            WebDriverManager.chromedriver().setup();
+            ChromeOptions opt = new ChromeOptions();
+            opt.addArguments("--remote-allow-origins=*");
             System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(opt);
         } else if (browser.equalsIgnoreCase("Firefox")) {
             System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
             driver = new FirefoxDriver();
@@ -46,6 +49,7 @@ public class BaseDriver_BRAVE {
             ChromeOptions opt = new ChromeOptions();
             opt.addArguments("--remote-allow-origins=*");
             opt.setBinary("C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe");
+            System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
             driver = new ChromeDriver(opt);
         }
 
