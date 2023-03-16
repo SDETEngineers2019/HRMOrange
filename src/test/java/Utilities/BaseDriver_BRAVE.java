@@ -2,7 +2,7 @@ package Utilities;
 
 import Utilities.Tools.Tools_Burak;
 import Utilities.Tools.Tools_Busra;
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,8 +23,8 @@ import java.util.logging.Logger;
 
 
 public class BaseDriver_BRAVE {
-    public WebDriver driver;
-    public WebDriverWait wait;
+    public static WebDriver driver;
+    public static WebDriverWait wait;
 
 
      @BeforeClass()
@@ -36,7 +36,6 @@ public class BaseDriver_BRAVE {
         logger.setLevel(Level.SEVERE);
 
         if (browser.equalsIgnoreCase("Chrome")) {
-            WebDriverManager.chromedriver().setup();
             ChromeOptions opt = new ChromeOptions();
             opt.addArguments("--remote-allow-origins=*");
             System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
@@ -45,14 +44,13 @@ public class BaseDriver_BRAVE {
             System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
             driver = new FirefoxDriver();
         } else {
-            WebDriverManager.chromedriver().setup();
             ChromeOptions opt = new ChromeOptions();
             opt.addArguments("--remote-allow-origins=*");
             opt.setBinary("C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe");
             System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
             driver = new ChromeDriver(opt);
         }
-
+        driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
@@ -63,7 +61,7 @@ public class BaseDriver_BRAVE {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        driver.quit();
+        //driver.quit();
         try {
             Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
         } catch (IOException e) {
