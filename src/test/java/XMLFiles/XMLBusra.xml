@@ -4,7 +4,14 @@
     <test name = "Edit Name Test">
         <parameter name="keyWord" value="Mark"></parameter>
         <classes>
-            <class name="UserStories.UserStory_Busra"></class>
+            <class name="UserStories.Busra.UserStory_Busra"></class>
+        </classes>
+    </test>
+
+    <test name="Edit Username Validation">
+        <parameter name="keyWord" value="Admin"></parameter>
+        <classes>
+            <class name="UserStories.Busra.EditNameValidate_Busra"></class>
         </classes>
     </test>
 </suite>
