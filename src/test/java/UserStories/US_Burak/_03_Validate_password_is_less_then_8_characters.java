@@ -28,7 +28,7 @@ public class _03_Validate_password_is_less_then_8_characters extends Tools_Burak
 
         WebElement pswError = driver.findElement(By.xpath("//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']"));
         verifyElementContainsText_Tools(pswError, "least 8 characters");
-        //System.out.println(userNameError.getCssValue("color"));
-        Assert.isTrue(pswError.getCssValue("color").contains("rgba(235, 9, 16, 1)"), "It is not red!!!!");
+        System.out.println(pswError.getCssValue("color"));
+        Assert.isTrue(pswError.getCssValue("color").contains("rgb(235, 9, 16)"), "It is not red!!!!");
     }
 }

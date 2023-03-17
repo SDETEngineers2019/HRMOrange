@@ -51,7 +51,7 @@ public class BaseDriver_BRAVE {
             driver = new ChromeDriver(opt);
         }
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     @AfterClass(alwaysRun = true)
