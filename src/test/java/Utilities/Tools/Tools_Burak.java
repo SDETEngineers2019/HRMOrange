@@ -18,12 +18,11 @@ import static Utilities.BaseDriver.driver;
 import static Utilities.Tools.Tools_Berk.wait;
 
 public class Tools_Burak extends BaseDriver_BRAVE {
-    JavascriptExecutor js ;
+    static JavascriptExecutor js;
     Robot r2d2;
 
-    public void scrollToElement_Tools(WebElement element) {
+    public static void scrollToElement_Tools(WebElement element) {
         js = (JavascriptExecutor) driver;
-
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
@@ -33,7 +32,7 @@ public class Tools_Burak extends BaseDriver_BRAVE {
         js.executeScript("arguments[0].click();", element);
     }
 
-    public void waitUntilElementToBeVisible_Tools(WebElement element) {
+    public static void waitUntilElementToBeVisible_Tools(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -41,23 +40,23 @@ public class Tools_Burak extends BaseDriver_BRAVE {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void visibilityOfElementLocated_Tools(By path) {
+    public static void visibilityOfElementLocated_Tools(By path) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(path));
     }
 
-    public void waitUntilElementToBeClickable_Tools(WebElement element) {
+    public static void waitUntilElementToBeClickable_Tools(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void clickElement_Tools(WebElement element) {
+    public static void clickElement_Tools(WebElement element) {
         waitUntilElementToBeClickable_Tools(element);
-        scrollToElement_Tools(element);
+       // scrollToElement_Tools(element);
         element.click();
     }
 
-    public void sendKeysElement_Tools(WebElement element, String value) {
+    public static void sendKeysElement_Tools(WebElement element, String value) {
         waitUntilElementToBeVisible_Tools(element);
-        scrollToElement_Tools(element);
+       // scrollToElement_Tools(element);
         element.sendKeys(value);
     }
 

@@ -4,7 +4,9 @@
     <test name = "PP checking">
         <parameter name="browser" value="firefox"></parameter>
         <classes>
-            <class name="UserStories.UserStory_Burak"></class>
+            <class name="UserStories.US_Burak._01_UserStory_Less_Then_1MB_NON_PIC_FILE"></class>
+            <class name="UserStories.US_Burak._02_Validate_username_is_less_then_5_characters"></class>
+            <class name="UserStories.US_Burak._03_Validate_password_is_less_then_8_characters"></class>
         </classes>
     </test>
 </suite>
