@@ -3,7 +3,13 @@
 <suite name="All Test Suite">
     <test name = "Check The Upload Picture By Over The Size Of 1MB">
         <classes>
-            <class name="UserStories.UserStory_Belgin"></class>
+            <class name="UserStories.Belgin.UserStory_Belgin"></class>
+        </classes>
+    </test>
+
+    <test name = "Password Validation">
+        <classes>
+            <class name="UserStories.Belgin.PasswordValidation"></class>
         </classes>
     </test>
 </suite>

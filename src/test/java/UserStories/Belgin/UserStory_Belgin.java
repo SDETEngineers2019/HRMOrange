@@ -1,4 +1,4 @@
-package UserStories;
+package UserStories.Belgin;
 
 import Utilities.Tools.Tools_Belgin;
 import org.openqa.selenium.By;
