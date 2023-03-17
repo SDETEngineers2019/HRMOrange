@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test name = "to be filled by tester">
+    <test name = "Visibility of Add Button Test">
+        <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="toBeSelectedByTester"></class>
+            <class name="UserStories.Mehmet.VisibilityOfAddButton"></class>
         </classes>
     </test>
+    <test name = "Lower Case Error Message">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="samplePassword" value="technostudytester"></parameter>
+        <classes>
+            <class name="UserStories.Mehmet.LowerCaseErrorMessage"></class>
+        </classes>
+    </test>
+
 </suite>

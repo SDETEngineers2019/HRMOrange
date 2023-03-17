@@ -21,8 +21,8 @@ import java.time.Duration;
 public class UserStory_Sevgi extends Tools_Sevgi {
     @Test
             void TC_MI_P_02() throws InterruptedException, AWTException {
-        WebDriver driver =new ChromeDriver();
-        driver.manage().window().maximize();
+//        WebDriver driver =new ChromeDriver();
+//        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(30));
 
