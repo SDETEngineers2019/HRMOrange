@@ -23,11 +23,10 @@ public class ValidatingNotificationColorChange extends Tools_Ayse {
         elementClickable(element.getSaveButton());
         element.getSaveButton().click();
         element.getNotificationMessage().isDisplayed();
-       // String ExpectedColorOfNotificationMessage=element.getNotificationMessage().getCssValue("color");
-      String TextColor=  element.getNotificationMessage().getCssValue("color");
+        // String ExpectedColorOfNotificationMessage=element.getNotificationMessage().getCssValue("color");
+        String TextColor = element.getNotificationMessage().getCssValue("color");
         System.out.println(TextColor);
-       Thread.sleep(3000);
-        Assert.assertTrue(TextColor.contains("rgba(235, 9, 16, 1)"), "It is not red!!!!");
-//Assert.assertTrue(TextColor,"rgba(235, 9, 16, 1)");rgba(235, 9, 16, 1)
+        Thread.sleep(3000);
+        Assert.assertTrue(TextColor.contains("rgba(235, 9, 16, 1)"), "It is not red");
     }
 }
